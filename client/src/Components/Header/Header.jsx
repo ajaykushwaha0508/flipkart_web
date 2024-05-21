@@ -80,7 +80,7 @@ const list =()=>(
             </Drawer>
                 
                 <Component to='/' >
-                     <img src={logoURL} style={{width : "75px"}}/>
+                     <img src={logoURL} style={{width : "75px"}} alt="img"/>
 
                      <Box style={{display : "flex"}}>
                         <SubHeading>Explore &nbsp; 
