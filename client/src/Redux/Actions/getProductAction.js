@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as actionTypes from '../Contants/productsConstent';
  
-const URL = 'http://localhost:8000'; 
+const URL = 'https://flipkart-web-ducg.onrender.com'; 
 
 export const getProducts=()=>async(dispatch)=>{
     try{

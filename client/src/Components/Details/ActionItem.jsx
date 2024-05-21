@@ -73,7 +73,7 @@ const ActionItem=({product})=>{
         description: "Rozarpay api testing",
         image: "https://avatars.githubusercontent.com/u/129685062?v=4",
         order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        callback_url: "http://localhost:8000/api/paymentverification/",
+        callback_url: "https://flipkart-web-ducg.onrender.com/api/paymentverification/",
         prefill: {
             "name": "Gaurav Kumar",
             "email": "gaurav.kumar@example.com",
