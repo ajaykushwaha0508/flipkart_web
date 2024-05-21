@@ -59,8 +59,8 @@ const ActionItem=({product})=>{
     // }
 
     const checkoutHandler=async(amount)=>{
-        const {data:{key}} = await axios.get("http://localhost:8000/api/getkey/");
-       const { data:{order}} = await axios.post("http://localhost:8000/api/checkout" , {
+        const {data:{key}} = await axios.get("https://flipkart-web-ducg.onrender.com/api/getkey/");
+       const { data:{order}} = await axios.post("https://flipkart-web-ducg.onrender.com/api/checkout" , {
         amount
        });
           
