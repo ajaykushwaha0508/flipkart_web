@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 // import {payUsingPaytm} from '../../service/api';
 // import { post } from "../../utils/paytm.js";
 
+import {backendurl} from "../../Constants/url"; 
+
 import { addToCart } from "../../Redux/Actions/cartAction";
 import { useDispatch } from "react-redux";
 
@@ -59,8 +61,8 @@ const ActionItem=({product})=>{
     // }
 
     const checkoutHandler=async(amount)=>{
-        const {data:{key}} = await axios.get("https://flipkart-web-ducg.onrender.com/api/getkey/");
-       const { data:{order}} = await axios.post("https://flipkart-web-ducg.onrender.com/api/checkout" , {
+        const {data:{key}} = await axios.get(`${backendurl}/api/getkey/`);
+       const { data:{order}} = await axios.post(`${backendurl}/api/checkout` , {
         amount
        });
           
@@ -73,7 +75,7 @@ const ActionItem=({product})=>{
         description: "Rozarpay api testing",
         image: "https://avatars.githubusercontent.com/u/129685062?v=4",
         order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        callback_url: "https://flipkart-web-ducg.onrender.com/api/paymentverification/",
+        callback_url: `${backendurl}/api/paymentverification/`,
         prefill: {
             "name": "Gaurav Kumar",
             "email": "gaurav.kumar@example.com",

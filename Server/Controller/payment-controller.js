@@ -108,7 +108,7 @@ export const paymentverification = async(req , res)=>{
 
                             const isAuthentic  = razorpay_signature === expectedSignature;
                             if(isAuthentic){
-                              res.redirect(`https://flipkart-web-ducg.onrender.com/paymentsuccess?reffernce=${razorpay_payment_id}`);
+                              res.redirect(`${process.env.FRONT_URL}/paymentsuccess?reffernce=${razorpay_payment_id}`);
 
                             }else{
                               res.status(400).json({success : true});

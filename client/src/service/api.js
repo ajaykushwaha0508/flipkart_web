@@ -35,8 +35,9 @@
 
 
 import axios from 'axios';
+import {backendurl} from '../Constants/url'
 
-const url = 'https://flipkart-web-ducg.onrender.com';
+const url = backendurl;
 
 export const authenticateLogin = async (user) => {
     try {
