@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import CartItems from "./CartItems";
 import TotalView from "./TotalView";
 import EmptyCart from "./EmptyCart";
+import { useEffect } from "react";
+
+import { checkoutHandler } from "../Details/ActionItem";
 
 const Container = styled(Grid)(({theme})=>({
     padding : '30px 135px',
@@ -48,6 +51,23 @@ const Cart=()=>{
 
     const {cartItems} = useSelector(state => state.cart);
 
+    let total_amount = 0;
+    let price= 0;
+    let discount =  0;
+
+
+    useEffect(()=>{
+                for(const item of cartItems){ // to get the total amount of cart items 
+                    price += item.price.mrp;
+                    discount += item.price.mrp-item.price.cost;
+                    total_amount=price-discount;
+                };
+
+                console.log(total_amount+40);
+    } ,[cartItems.length]);
+
+    
+
    return(
        <>
           {
@@ -64,7 +84,7 @@ const Cart=()=>{
                         }
 
                         <ButtonWrapper>
-                            <StyledButton>PLACE ORDER</StyledButton>
+                            <StyledButton onClick={()=>checkoutHandler(cartItems , total_amount+40)}>PLACE ORDER</StyledButton>
                         </ButtonWrapper>
                         
                     </LeftComponent>

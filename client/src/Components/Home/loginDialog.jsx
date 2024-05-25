@@ -102,21 +102,24 @@ const LoginDialog = ({open , setOpen})=>{
     const {setAccount} = useContext(DataContext);
     const [error , setError] = useState(false);  
     const onInputchange=(e)=>{
-
-       setSignup({...signup , [e.target.name] : e.target.value});
+        console.log("in inputchange");
+        setSignup({...signup , [e.target.name] : e.target.value});
     }
-
+    
     const toggleSignUp=()=>{
+           console.log("in toogle signup");
             toggleAccount(accountIntialValues.signup);
     }
     
     const closeHandle=()=>{
+            console.log("in close handle")
             setOpen(false);
             toggleAccount(accountIntialValues.login);
             setError(false);
     }
 
     const usersignup = async ()=>{
+         console.log("in user signup");
          let response = await authenticateSignup(signup);
          if(!response) return;
          closeHandle(); 
@@ -124,17 +127,21 @@ const LoginDialog = ({open , setOpen})=>{
     }
 
     const onValuechange=(e)=>{
+        console.log("in on value change");
         setLogin({...login , [e.target.name] : e.target.value});
         
     }
 
   const loginuser=   async()=> {
+          console.log("in login user");
          let response = await authenticateLogin(login);
-        
-         if(response.status === 200){
+         console.log(response);
+         if(response?.status === 200){
+            console.log("in status");
             closeHandle();
             setAccount(response.data.data.firstname);
-         }else{
+        }else{
+             console.log("in error");
             setError(true);
          }
   }

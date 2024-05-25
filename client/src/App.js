@@ -8,8 +8,11 @@ import DataProvider from './Context/DataProvider';
 import Cart from './Components/cart/Cart';
 import {BrowserRouter , Routes , Route} from 'react-router-dom';
 import PaymentSuccesssful from './Components/payment/PaymentSuccesssful';
+
 function App() {
   return (
+
+
     <DataProvider> 
       <BrowserRouter>
           <Header/>
@@ -25,6 +28,7 @@ function App() {
           </Box> 
       </BrowserRouter>
     </DataProvider>
+
   );
 }
 
