@@ -37,7 +37,7 @@ const PaymentSuccesssful = () => {
    
     <>
        <Paymentcontainer>
-       <Typography variant="h3" style={{color : "green" , marginTop :"240px"}}>Order Successful</Typography>
+       <Typography variant="h3" style={{color : "green"}}>Order Successful</Typography>
         {
           isArray ? <>
                         {
