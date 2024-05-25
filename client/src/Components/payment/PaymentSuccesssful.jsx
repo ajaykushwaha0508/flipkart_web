@@ -9,7 +9,6 @@ display : flex ;
 height :100vh;
 flex-direction : column; 
 align-items  : center ; 
-justify-content : center;
 `
 const Image = styled('img')({  
   padding : '15px',
@@ -38,7 +37,7 @@ const PaymentSuccesssful = () => {
    
     <>
        <Paymentcontainer>
-       <Typography variant="h3" style={{color : "green" , marginTop :"100px"}}>Order Successful</Typography>
+       <Typography variant="h3" style={{color : "green" , marginTop :"240px"}}>Order Successful</Typography>
         {
           isArray ? <>
                         {
